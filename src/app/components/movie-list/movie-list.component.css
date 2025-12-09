@@ -1,0 +1,97 @@
+.movie-list {
+  @apply min-h-screen bg-gray-100 px-4 py-8;
+  @apply sm:px-6 lg:px-8;
+}
+
+.movie-list__header {
+  @apply max-w-7xl mx-auto mb-8;
+  @apply flex flex-col gap-4;
+  @apply sm:flex-row sm:items-center sm:justify-between;
+}
+
+.movie-list__title {
+  @apply text-3xl font-bold text-gray-900;
+  @apply sm:text-4xl;
+}
+
+.movie-list__search {
+  @apply relative w-full;
+  @apply sm:w-80;
+}
+
+.movie-list__search-input {
+  @apply w-full pl-10 pr-4 py-3 rounded-lg;
+  @apply bg-white border border-gray-300;
+  @apply text-gray-900 placeholder-gray-400;
+  @apply transition-all duration-200;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent;
+}
+
+.movie-list__search-icon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2;
+  @apply w-5 h-5 text-gray-400;
+  @apply pointer-events-none;
+}
+
+.movie-list__grid {
+  @apply max-w-7xl mx-auto;
+  @apply grid gap-6;
+  @apply grid-cols-2;
+  @apply sm:grid-cols-3;
+  @apply lg:grid-cols-4;
+  @apply xl:grid-cols-5;
+}
+
+.movie-list__card {
+  @apply animate-fade-in;
+}
+
+.movie-list__loading {
+  @apply flex flex-col items-center justify-center py-20;
+}
+
+.movie-list__spinner {
+  @apply w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.movie-list__loading-text {
+  @apply mt-4 text-gray-600;
+}
+
+.movie-list__error {
+  @apply flex flex-col items-center justify-center py-20 text-center;
+}
+
+.movie-list__error-icon {
+  @apply w-16 h-16 text-red-500 mb-4;
+}
+
+.movie-list__error-text {
+  @apply text-lg text-gray-700 mb-4;
+}
+
+.movie-list__retry-btn {
+  @apply px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg;
+  @apply transition-colors duration-200;
+  @apply hover:bg-indigo-700;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+}
+
+.movie-list__empty {
+  @apply flex flex-col items-center justify-center py-20 text-center;
+}
+
+.movie-list__empty p {
+  @apply text-xl text-gray-600;
+}
+
+.movie-list__empty-hint {
+  @apply mt-2 text-gray-400;
+}

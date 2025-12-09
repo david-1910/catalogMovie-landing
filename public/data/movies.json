@@ -1,0 +1,136 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Начало",
+      "year": 2010,
+      "rating": 8.8,
+      "genres": ["Боевик", "Фантастика", "Триллер"],
+      "description": "Вор, похищающий секреты корпораций с помощью технологии обмена снами, получает задание внедрить идею в подсознание генерального директора.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+      "director": "Кристофер Нолан",
+      "duration": 148
+    },
+    {
+      "id": 2,
+      "title": "Интерстеллар",
+      "year": 2014,
+      "rating": 8.7,
+      "genres": ["Приключения", "Драма", "Фантастика"],
+      "description": "Команда исследователей путешествует через червоточину в космосе в попытке обеспечить выживание человечества.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Кристофер Нолан",
+      "duration": 169
+    },
+    {
+      "id": 3,
+      "title": "Тёмный рыцарь",
+      "year": 2008,
+      "rating": 9.0,
+      "genres": ["Боевик", "Криминал", "Драма"],
+      "description": "Когда угроза, известная как Джокер, сеет хаос среди жителей Готэма, Бэтмен должен принять одно из величайших психологических и физических испытаний.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+      "director": "Кристофер Нолан",
+      "duration": 152
+    },
+    {
+      "id": 4,
+      "title": "Помни",
+      "year": 2000,
+      "rating": 8.4,
+      "genres": ["Детектив", "Триллер"],
+      "description": "Мужчина с кратковременной потерей памяти пытается выследить убийцу своей жены, используя татуировки и заметки.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZTcyNjk1MjgtOWI3Mi00YzQwLWI5MTktMzY4ZmI2NDAyNzYzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "director": "Кристофер Нолан",
+      "duration": 113
+    },
+    {
+      "id": 5,
+      "title": "Матрица",
+      "year": 1999,
+      "rating": 8.7,
+      "genres": ["Боевик", "Фантастика"],
+      "description": "Когда прекрасная незнакомка вводит компьютерного хакера в запретный подпольный мир, он обнаруживает шокирующую правду — жизнь, которую он знает, — это тщательно продуманный обман.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Лана Вачовски, Лилли Вачовски",
+      "duration": 136
+    },
+    {
+      "id": 6,
+      "title": "Побег из Шоушенка",
+      "year": 1994,
+      "rating": 9.3,
+      "genres": ["Драма"],
+      "description": "Два заключённых сближаются за несколько лет, находя утешение и в конечном счёте искупление благодаря актам простой порядочности.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Фрэнк Дарабонт",
+      "duration": 142
+    },
+    {
+      "id": 7,
+      "title": "Крёстный отец",
+      "year": 1972,
+      "rating": 9.2,
+      "genres": ["Криминал", "Драма"],
+      "description": "История криминальной династии Корлеоне. Стареющий патриарх передаёт контроль над своей тайной империей неохотному сыну.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYTJkNGQyZDgtZDQ0NC00MDM0LWEzZWQtYzUzZDEwMDljZWNjXkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Фрэнсис Форд Коппола",
+      "duration": 175
+    },
+    {
+      "id": 8,
+      "title": "Бойцовский клуб",
+      "year": 1999,
+      "rating": 8.8,
+      "genres": ["Драма"],
+      "description": "Страдающий бессонницей офисный работник и беззаботный продавец мыла создают подпольный бойцовский клуб, который перерастает в нечто большее.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Дэвид Финчер",
+      "duration": 139
+    },
+    {
+      "id": 9,
+      "title": "Форрест Гамп",
+      "year": 1994,
+      "rating": 8.8,
+      "genres": ["Драма", "Мелодрама"],
+      "description": "Президенты приходят и уходят, а Форрест Гамп остается — всегда в центре важнейших событий XX века.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDYwNzVjMTItZmU5YS00YjQ5LTljYjgtMjY2NDVmYWMyNWFmXkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Роберт Земекис",
+      "duration": 142
+    },
+    {
+      "id": 10,
+      "title": "Властелин колец: Возвращение короля",
+      "year": 2003,
+      "rating": 9.0,
+      "genres": ["Приключения", "Драма", "Фэнтези"],
+      "description": "Гэндальф и Арагорн ведут мир людей против армии Саурона, чтобы отвлечь его внимание от Фродо и Сэма, приближающихся к Роковой горе с Единым кольцом.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Питер Джексон",
+      "duration": 201
+    },
+    {
+      "id": 11,
+      "title": "Список Шиндлера",
+      "year": 1993,
+      "rating": 9.0,
+      "genres": ["Биография", "Драма", "История"],
+      "description": "В оккупированной немцами Польше во время Второй мировой войны промышленник Оскар Шиндлер постепенно начинает беспокоиться о своих еврейских работниках.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjM1ZDQxYWUtMzQyZS00MTE1LWJmZGYtNGUyNTdlYjM3ZmVmXkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Стивен Спилберг",
+      "duration": 195
+    },
+    {
+      "id": 12,
+      "title": "Криминальное чтиво",
+      "year": 1994,
+      "rating": 8.9,
+      "genres": ["Криминал", "Драма"],
+      "description": "Жизни двух наёмных убийц, боксёра, гангстера и его жены переплетаются в четырёх историях о насилии и искуплении.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_SX300.jpg",
+      "director": "Квентин Тарантино",
+      "duration": 154
+    }
+  ]
+}

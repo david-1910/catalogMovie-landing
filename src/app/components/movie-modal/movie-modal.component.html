@@ -1,0 +1,83 @@
+<div
+  class="modal__backdrop"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="'Информация о фильме ' + movie().title"
+  (click)="onBackdropClick($event)"
+>
+  <article class="modal__content">
+    <button
+      class="modal__close-btn"
+      (click)="closeModal()"
+      aria-label="Закрыть"
+      type="button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+
+    <div class="modal__body">
+      <figure class="modal__poster-wrapper">
+        <img
+          [src]="movie().poster"
+          [alt]="movie().title"
+          class="modal__poster"
+        />
+      </figure>
+
+      <div class="modal__info">
+        <header class="modal__header">
+          <h2 class="modal__title">{{ movie().title }}</h2>
+          <p class="modal__year">{{ movie().year }}</p>
+        </header>
+
+        <div class="modal__genres">
+          @for (genre of movie().genres; track genre) {
+            <span class="modal__genre">{{ genre }}</span>
+          }
+        </div>
+
+        <p class="modal__description">{{ movie().description }}</p>
+
+        <dl class="modal__details">
+          <div class="modal__detail">
+            <dt class="modal__detail-label">Рейтинг</dt>
+            <dd class="modal__detail-value modal__rating">
+              <svg
+                class="modal__star-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              {{ movie().rating }}
+            </dd>
+          </div>
+          <div class="modal__detail">
+            <dt class="modal__detail-label">Режиссёр</dt>
+            <dd class="modal__detail-value">{{ movie().director }}</dd>
+          </div>
+          <div class="modal__detail">
+            <dt class="modal__detail-label">Длительность</dt>
+            <dd class="modal__detail-value">{{ formatDuration(movie().duration) }}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </article>
+</div>

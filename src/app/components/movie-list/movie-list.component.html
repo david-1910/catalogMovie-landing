@@ -1,0 +1,92 @@
+<main class="movie-list">
+  <header class="movie-list__header">
+    <h1 class="movie-list__title">Каталог фильмов</h1>
+    <div class="movie-list__search">
+      <label for="search" class="sr-only">Поиск фильмов</label>
+      <input
+        id="search"
+        type="search"
+        class="movie-list__search-input"
+        placeholder="Поиск фильмов..."
+        [value]="searchQuery()"
+        (input)="onSearchInput($event)"
+        autocomplete="off"
+      />
+      <svg
+        class="movie-list__search-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+        />
+      </svg>
+    </div>
+  </header>
+
+  @if (isLoading()) {
+    <div class="movie-list__loading" role="status" aria-label="Загрузка">
+      <div class="movie-list__spinner"></div>
+      <p class="movie-list__loading-text">Загрузка фильмов...</p>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="movie-list__error" role="alert">
+      <svg
+        class="movie-list__error-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+        />
+      </svg>
+      <p class="movie-list__error-text">{{ error() }}</p>
+      <button class="movie-list__retry-btn" (click)="retryLoading()">
+        Попробовать снова
+      </button>
+    </div>
+  }
+
+  @if (!isLoading() && !error()) {
+    @if (hasNoResults()) {
+      <div class="movie-list__empty">
+        <p>Фильмы не найдены</p>
+        @if (searchQuery()) {
+          <p class="movie-list__empty-hint">
+            Попробуйте изменить поисковый запрос
+          </p>
+        }
+      </div>
+    } @else {
+      <section class="movie-list__grid" aria-label="Список фильмов">
+        @for (movie of filteredMovies(); track movie.id) {
+          <app-movie-card
+            [movie]="movie"
+            (cardClick)="openMovieModal($event)"
+            class="movie-list__card"
+          />
+        }
+      </section>
+    }
+  }
+
+  @if (selectedMovie()) {
+    <app-movie-modal
+      [movie]="selectedMovie()!"
+      (close)="closeMovieModal()"
+    />
+  }
+</main>

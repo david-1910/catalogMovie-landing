@@ -1,0 +1,118 @@
+.modal__backdrop {
+  @apply fixed inset-0 z-50;
+  @apply flex items-center justify-center;
+  @apply bg-black/60 backdrop-blur-sm;
+  @apply p-4;
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal__content {
+  @apply relative w-full max-w-3xl max-h-[90vh];
+  @apply bg-white rounded-2xl shadow-2xl overflow-hidden;
+  animation: slide-up 0.3s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal__close-btn {
+  @apply absolute top-4 right-4 z-10;
+  @apply w-10 h-10 rounded-full;
+  @apply bg-white/90 shadow-md;
+  @apply flex items-center justify-center;
+  @apply text-gray-600;
+  @apply transition-all duration-200;
+  @apply hover:bg-white hover:text-gray-900 hover:scale-110;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.modal__close-btn svg {
+  @apply w-5 h-5;
+}
+
+.modal__body {
+  @apply flex flex-col overflow-y-auto max-h-[90vh];
+  @apply md:flex-row;
+}
+
+.modal__poster-wrapper {
+  @apply flex-shrink-0;
+  @apply md:w-72;
+}
+
+.modal__poster {
+  @apply w-full h-64 object-cover;
+  @apply md:h-full;
+}
+
+.modal__info {
+  @apply flex-1 p-6;
+  @apply md:p-8;
+}
+
+.modal__header {
+  @apply mb-4;
+}
+
+.modal__title {
+  @apply text-2xl font-bold text-gray-900;
+  @apply md:text-3xl;
+}
+
+.modal__year {
+  @apply text-lg text-gray-500 mt-1;
+}
+
+.modal__genres {
+  @apply flex flex-wrap gap-2 mb-4;
+}
+
+.modal__genre {
+  @apply px-3 py-1 rounded-full text-sm;
+  @apply bg-indigo-100 text-indigo-700;
+}
+
+.modal__description {
+  @apply text-gray-700 leading-relaxed mb-6;
+}
+
+.modal__details {
+  @apply space-y-3;
+}
+
+.modal__detail {
+  @apply flex items-center gap-2;
+}
+
+.modal__detail-label {
+  @apply text-sm text-gray-500 min-w-24;
+}
+
+.modal__detail-value {
+  @apply text-gray-900 font-medium;
+}
+
+.modal__rating {
+  @apply flex items-center gap-1 text-amber-600;
+}
+
+.modal__star-icon {
+  @apply w-5 h-5;
+}

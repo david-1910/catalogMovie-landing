@@ -1,0 +1,38 @@
+.movie-card {
+  @apply relative flex flex-col overflow-hidden rounded-xl bg-white shadow-md cursor-pointer;
+  @apply transition-all duration-300 ease-out;
+  @apply hover:shadow-xl hover:-translate-y-1;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+}
+
+.movie-card__poster-wrapper {
+  @apply relative aspect-[2/3] overflow-hidden bg-gray-200;
+}
+
+.movie-card__poster {
+  @apply w-full h-full object-cover;
+  @apply transition-transform duration-300 ease-out;
+}
+
+.movie-card:hover .movie-card__poster {
+  @apply scale-105;
+}
+
+.movie-card__rating {
+  @apply absolute top-2 right-2 px-2 py-1 rounded-md;
+  @apply bg-indigo-600 text-white text-sm font-bold;
+  @apply shadow-lg;
+}
+
+.movie-card__content {
+  @apply p-4;
+}
+
+.movie-card__title {
+  @apply text-base font-semibold text-gray-900 line-clamp-2;
+  @apply mb-1;
+}
+
+.movie-card__year {
+  @apply text-sm text-gray-500;
+}

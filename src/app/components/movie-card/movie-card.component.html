@@ -1,0 +1,24 @@
+<article
+  class="movie-card"
+  (click)="onCardClick()"
+  (keydown.enter)="onCardClick()"
+  tabindex="0"
+  role="button"
+  [attr.aria-label]="'Открыть информацию о фильме ' + movie().title"
+>
+  <figure class="movie-card__poster-wrapper">
+    <img
+      [src]="movie().poster"
+      [alt]="movie().title"
+      class="movie-card__poster"
+      loading="lazy"
+    />
+    <figcaption class="movie-card__rating">
+      {{ movie().rating }}
+    </figcaption>
+  </figure>
+  <div class="movie-card__content">
+    <h3 class="movie-card__title">{{ movie().title }}</h3>
+    <p class="movie-card__year">{{ movie().year }}</p>
+  </div>
+</article>
