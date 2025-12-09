@@ -2,9 +2,10 @@
 
 .modal__backdrop {
   @apply fixed inset-0 z-50;
-  @apply flex items-center justify-center;
+  @apply flex items-end justify-center;
   @apply bg-black/60 backdrop-blur-sm;
-  @apply p-4;
+  @apply p-0;
+  @apply sm:items-center sm:p-4;
   animation: fade-in 0.2s ease-out;
 }
 
@@ -18,31 +19,47 @@
 }
 
 .modal__content {
-  @apply relative w-full max-w-3xl max-h-[90vh];
-  @apply bg-white rounded-2xl shadow-2xl overflow-hidden;
+  @apply relative w-full max-h-[95vh];
+  @apply bg-white shadow-2xl overflow-hidden;
+  @apply rounded-t-2xl;
+  @apply sm:max-w-3xl sm:max-h-[90vh] sm:rounded-2xl;
   animation: slide-up 0.3s ease-out;
 }
 
 @keyframes slide-up {
   from {
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
+    transform: translateY(100%);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 }
 
 .modal__close-btn {
-  @apply absolute top-4 right-4 z-10;
-  @apply w-10 h-10 rounded-full;
+  @apply absolute top-3 right-3 z-10;
+  @apply w-9 h-9 rounded-full;
   @apply bg-white/90 shadow-md;
   @apply flex items-center justify-center;
   @apply text-gray-600;
   @apply transition-all duration-200;
   @apply hover:bg-white hover:text-gray-900 hover:scale-110;
   @apply focus:outline-none focus:ring-2 focus:ring-indigo-500;
+  @apply sm:top-4 sm:right-4 sm:w-10 sm:h-10;
 }
 
 .modal__close-btn svg {
@@ -50,53 +67,64 @@
 }
 
 .modal__body {
-  @apply flex flex-col overflow-y-auto max-h-[90vh];
+  @apply flex flex-col overflow-y-auto max-h-[95vh];
+  @apply sm:max-h-[90vh];
   @apply md:flex-row;
 }
 
 .modal__poster-wrapper {
   @apply flex-shrink-0;
-  @apply md:w-72;
+  @apply w-full;
+  @apply md:w-64 lg:w-72;
 }
 
 .modal__poster {
-  @apply w-full h-64 object-cover;
+  @apply w-full h-48 object-cover;
+  @apply sm:h-64;
   @apply md:h-full;
 }
 
 .modal__info {
-  @apply flex-1 p-6;
+  @apply flex-1 p-4;
+  @apply sm:p-6;
   @apply md:p-8;
 }
 
 .modal__header {
-  @apply mb-4;
+  @apply mb-3;
+  @apply sm:mb-4;
 }
 
 .modal__title {
-  @apply text-2xl font-bold text-gray-900;
+  @apply text-xl font-bold text-gray-900;
+  @apply sm:text-2xl;
   @apply md:text-3xl;
 }
 
 .modal__year {
-  @apply text-lg text-gray-500 mt-1;
+  @apply text-base text-gray-500 mt-1;
+  @apply sm:text-lg;
 }
 
 .modal__genres {
-  @apply flex flex-wrap gap-2 mb-4;
+  @apply flex flex-wrap gap-1.5 mb-3;
+  @apply sm:gap-2 sm:mb-4;
 }
 
 .modal__genre {
-  @apply px-3 py-1 rounded-full text-sm;
+  @apply px-2 py-0.5 rounded-full text-xs;
   @apply bg-indigo-100 text-indigo-700;
+  @apply sm:px-3 sm:py-1 sm:text-sm;
 }
 
 .modal__description {
-  @apply text-gray-700 leading-relaxed mb-6;
+  @apply text-sm text-gray-700 leading-relaxed mb-4;
+  @apply sm:text-base sm:mb-6;
 }
 
 .modal__details {
-  @apply space-y-3;
+  @apply space-y-2;
+  @apply sm:space-y-3;
 }
 
 .modal__detail {
@@ -104,11 +132,14 @@
 }
 
 .modal__detail-label {
-  @apply text-sm text-gray-500 min-w-24;
+  @apply text-xs text-gray-500;
+  @apply min-w-20;
+  @apply sm:text-sm sm:min-w-24;
 }
 
 .modal__detail-value {
-  @apply text-gray-900 font-medium;
+  @apply text-sm text-gray-900 font-medium;
+  @apply sm:text-base;
 }
 
 .modal__rating {
@@ -116,5 +147,6 @@
 }
 
 .modal__star-icon {
-  @apply w-5 h-5;
+  @apply w-4 h-4;
+  @apply sm:w-5 sm:h-5;
 }

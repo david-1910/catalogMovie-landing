@@ -1,10 +1,12 @@
 @reference "tailwindcss";
 
 .movie-card {
-  @apply relative flex flex-col overflow-hidden rounded-xl bg-white shadow-md cursor-pointer;
+  @apply relative flex flex-col overflow-hidden bg-white shadow-md cursor-pointer;
+  @apply rounded-lg;
   @apply transition-all duration-300 ease-out;
   @apply hover:shadow-xl hover:-translate-y-1;
   @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  @apply sm:rounded-xl;
 }
 
 .movie-card__poster-wrapper {
@@ -21,20 +23,26 @@
 }
 
 .movie-card__rating {
-  @apply absolute top-2 right-2 px-2 py-1 rounded-md;
-  @apply bg-indigo-600 text-white text-sm font-bold;
+  @apply absolute top-1.5 right-1.5;
+  @apply px-1.5 py-0.5 rounded;
+  @apply bg-indigo-600 text-white text-xs font-bold;
   @apply shadow-lg;
+  @apply sm:top-2 sm:right-2 sm:px-2 sm:py-1 sm:text-sm sm:rounded-md;
 }
 
 .movie-card__content {
-  @apply p-4;
+  @apply p-2;
+  @apply sm:p-3;
+  @apply md:p-4;
 }
 
 .movie-card__title {
-  @apply text-base font-semibold text-gray-900 line-clamp-2;
-  @apply mb-1;
+  @apply text-sm font-semibold text-gray-900 line-clamp-2;
+  @apply mb-0.5;
+  @apply sm:text-base sm:mb-1;
 }
 
 .movie-card__year {
-  @apply text-sm text-gray-500;
+  @apply text-xs text-gray-500;
+  @apply sm:text-sm;
 }

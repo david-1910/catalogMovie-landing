@@ -1,7 +1,9 @@
 @reference "tailwindcss";
 
 .skeleton-card {
-  @apply flex flex-col overflow-hidden rounded-xl bg-white shadow-md;
+  @apply flex flex-col overflow-hidden bg-white shadow-md;
+  @apply rounded-lg;
+  @apply sm:rounded-xl;
 }
 
 .skeleton-card__poster {
@@ -12,18 +14,22 @@
 }
 
 .skeleton-card__content {
-  @apply p-4 space-y-2;
+  @apply p-2 space-y-1.5;
+  @apply sm:p-3 sm:space-y-2;
+  @apply md:p-4;
 }
 
 .skeleton-card__title {
-  @apply h-5 bg-gray-200 rounded w-3/4;
+  @apply h-4 bg-gray-200 rounded w-3/4;
+  @apply sm:h-5;
   animation: shimmer 1.5s infinite;
   background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
   background-size: 200% 100%;
 }
 
 .skeleton-card__year {
-  @apply h-4 bg-gray-200 rounded w-1/3;
+  @apply h-3 bg-gray-200 rounded w-1/3;
+  @apply sm:h-4;
   animation: shimmer 1.5s infinite;
   background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
   background-size: 200% 100%;

@@ -2,13 +2,16 @@
 @reference "../../../styles.css";
 
 .movie-list {
-  @apply min-h-screen bg-gray-100 px-4 py-8;
-  @apply sm:px-6 lg:px-8;
+  @apply min-h-screen bg-gray-100;
+  @apply px-3 py-4;
+  @apply sm:px-6 sm:py-6;
+  @apply lg:px-8 lg:py-8;
 }
 
 .movie-list__header {
-  @apply max-w-7xl mx-auto mb-6;
-  @apply flex flex-col gap-4;
+  @apply max-w-7xl mx-auto mb-4;
+  @apply flex flex-col gap-3;
+  @apply sm:mb-6 sm:gap-4;
 }
 
 .movie-list__title-row {
@@ -17,8 +20,9 @@
 }
 
 .movie-list__title {
-  @apply text-3xl font-bold text-gray-900;
-  @apply sm:text-4xl;
+  @apply text-2xl font-bold text-gray-900;
+  @apply sm:text-3xl;
+  @apply lg:text-4xl;
 }
 
 .movie-list__count {
@@ -26,20 +30,23 @@
 }
 
 .movie-list__controls {
-  @apply flex flex-wrap items-center gap-3;
+  @apply flex flex-col gap-3;
+  @apply sm:flex-row sm:flex-wrap sm:items-center;
 }
 
 .movie-list__search {
-  @apply relative flex-1;
-  @apply sm:max-w-md;
+  @apply relative w-full;
+  @apply sm:flex-1 sm:max-w-md;
 }
 
 .movie-list__search-input {
-  @apply w-full pl-10 pr-4 py-3 rounded-lg;
+  @apply w-full pl-10 pr-4 py-2.5 rounded-lg;
   @apply bg-white border border-gray-300;
   @apply text-gray-900 placeholder-gray-400;
+  @apply text-base;
   @apply transition-all duration-200;
   @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent;
+  @apply sm:py-3;
 }
 
 .movie-list__search-icon {
@@ -49,12 +56,14 @@
 }
 
 .movie-list__filter-btn {
-  @apply flex items-center gap-2 px-4 py-3;
+  @apply flex items-center justify-center gap-2;
+  @apply w-full px-4 py-2.5;
   @apply bg-white border border-gray-300 rounded-lg;
   @apply text-gray-700 font-medium;
   @apply transition-all duration-200;
   @apply hover:bg-gray-50;
   @apply focus:outline-none focus:ring-2 focus:ring-indigo-500;
+  @apply sm:w-auto sm:py-3;
 }
 
 .movie-list__filter-btn svg {
@@ -66,26 +75,42 @@
 }
 
 .movie-list__filters-inline {
+  @apply w-full;
+  @apply lg:w-auto;
   animation: fade-in-filters 0.2s ease-out;
 }
 
 @keyframes fade-in-filters {
   from {
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes fade-in-filters {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
 
 .movie-list__grid {
   @apply max-w-7xl mx-auto;
-  @apply grid gap-6;
+  @apply grid gap-3;
   @apply grid-cols-2;
-  @apply sm:grid-cols-3;
-  @apply lg:grid-cols-4;
+  @apply sm:gap-4 sm:grid-cols-3;
+  @apply md:gap-5 md:grid-cols-3;
+  @apply lg:gap-6 lg:grid-cols-4;
   @apply xl:grid-cols-5;
 }
 
