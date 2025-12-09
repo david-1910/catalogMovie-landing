@@ -1,11 +1,18 @@
+@reference "tailwindcss";
+@reference "../../../styles.css";
+
 .movie-list {
   @apply min-h-screen bg-gray-100 px-4 py-8;
   @apply sm:px-6 lg:px-8;
 }
 
 .movie-list__header {
-  @apply max-w-7xl mx-auto mb-8;
+  @apply max-w-7xl mx-auto mb-6;
   @apply flex flex-col gap-4;
+}
+
+.movie-list__title-row {
+  @apply flex flex-col gap-1;
   @apply sm:flex-row sm:items-center sm:justify-between;
 }
 
@@ -14,9 +21,17 @@
   @apply sm:text-4xl;
 }
 
+.movie-list__count {
+  @apply text-gray-500 text-sm;
+}
+
+.movie-list__controls {
+  @apply flex flex-wrap items-center gap-3;
+}
+
 .movie-list__search {
-  @apply relative w-full;
-  @apply sm:w-80;
+  @apply relative flex-1;
+  @apply sm:max-w-md;
 }
 
 .movie-list__search-input {
@@ -31,6 +46,38 @@
   @apply absolute left-3 top-1/2 -translate-y-1/2;
   @apply w-5 h-5 text-gray-400;
   @apply pointer-events-none;
+}
+
+.movie-list__filter-btn {
+  @apply flex items-center gap-2 px-4 py-3;
+  @apply bg-white border border-gray-300 rounded-lg;
+  @apply text-gray-700 font-medium;
+  @apply transition-all duration-200;
+  @apply hover:bg-gray-50;
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.movie-list__filter-btn svg {
+  @apply w-5 h-5;
+}
+
+.movie-list__filter-btn--active {
+  @apply bg-indigo-50 border-indigo-300 text-indigo-700;
+}
+
+.movie-list__filters-inline {
+  animation: fade-in-filters 0.2s ease-out;
+}
+
+@keyframes fade-in-filters {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .movie-list__grid {
@@ -88,10 +135,14 @@
   @apply flex flex-col items-center justify-center py-20 text-center;
 }
 
+.movie-list__empty-icon {
+  @apply w-16 h-16 text-gray-400 mb-4;
+}
+
 .movie-list__empty p {
   @apply text-xl text-gray-600;
 }
 
 .movie-list__empty-hint {
-  @apply mt-2 text-gray-400;
+  @apply mt-2 text-gray-400 text-base;
 }

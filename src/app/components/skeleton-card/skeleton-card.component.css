@@ -1,0 +1,39 @@
+@reference "tailwindcss";
+
+.skeleton-card {
+  @apply flex flex-col overflow-hidden rounded-xl bg-white shadow-md;
+}
+
+.skeleton-card__poster {
+  @apply aspect-[2/3] bg-gray-200;
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+}
+
+.skeleton-card__content {
+  @apply p-4 space-y-2;
+}
+
+.skeleton-card__title {
+  @apply h-5 bg-gray-200 rounded w-3/4;
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+}
+
+.skeleton-card__year {
+  @apply h-4 bg-gray-200 rounded w-1/3;
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

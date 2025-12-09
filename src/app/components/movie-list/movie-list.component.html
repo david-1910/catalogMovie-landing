@@ -1,39 +1,85 @@
 <main class="movie-list">
   <header class="movie-list__header">
-    <h1 class="movie-list__title">Каталог фильмов</h1>
-    <div class="movie-list__search">
-      <label for="search" class="sr-only">Поиск фильмов</label>
-      <input
-        id="search"
-        type="search"
-        class="movie-list__search-input"
-        placeholder="Поиск фильмов..."
-        [value]="searchQuery()"
-        (input)="onSearchInput($event)"
-        autocomplete="off"
-      />
-      <svg
-        class="movie-list__search-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+    <div class="movie-list__title-row">
+      <h1 class="movie-list__title">Каталог фильмов</h1>
+      @if (!isLoading() && !error()) {
+        <span class="movie-list__count">
+          @if (hasActiveFilters()) {
+            {{ resultsCount() }} из {{ totalCount() }}
+          } @else {
+            {{ totalCount() }} фильмов
+          }
+        </span>
+      }
+    </div>
+
+    <div class="movie-list__controls">
+      <div class="movie-list__search">
+        <label for="search" class="sr-only">Поиск фильмов</label>
+        <input
+          id="search"
+          type="search"
+          class="movie-list__search-input"
+          placeholder="Поиск фильмов..."
+          [value]="searchQuery()"
+          (input)="onSearchInput($event)"
+          autocomplete="off"
         />
-      </svg>
+        <svg
+          class="movie-list__search-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </div>
+
+      <button
+        type="button"
+        class="movie-list__filter-btn"
+        [class.movie-list__filter-btn--active]="showFilters()"
+        (click)="toggleFilters()"
+        aria-label="Показать фильтры"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+          />
+        </svg>
+        Фильтры
+      </button>
+
+      @if (showFilters() && movies().length > 0) {
+        <app-movie-filters
+          [movies]="movies()"
+          (filterChange)="onFilterChange($event)"
+          class="movie-list__filters-inline"
+        />
+      }
     </div>
   </header>
 
   @if (isLoading()) {
-    <div class="movie-list__loading" role="status" aria-label="Загрузка">
-      <div class="movie-list__spinner"></div>
-      <p class="movie-list__loading-text">Загрузка фильмов...</p>
+    <div class="movie-list__grid" aria-label="Загрузка фильмов" role="status">
+      @for (item of skeletonItems; track $index) {
+        <app-skeleton-card />
+      }
     </div>
   }
 
@@ -63,10 +109,24 @@
   @if (!isLoading() && !error()) {
     @if (hasNoResults()) {
       <div class="movie-list__empty">
+        <svg
+          class="movie-list__empty-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
         <p>Фильмы не найдены</p>
-        @if (searchQuery()) {
+        @if (hasActiveFilters()) {
           <p class="movie-list__empty-hint">
-            Попробуйте изменить поисковый запрос
+            Попробуйте изменить параметры поиска или фильтры
           </p>
         }
       </div>

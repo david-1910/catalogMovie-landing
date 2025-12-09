@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .movie-card {
   @apply relative flex flex-col overflow-hidden rounded-xl bg-white shadow-md cursor-pointer;
   @apply transition-all duration-300 ease-out;

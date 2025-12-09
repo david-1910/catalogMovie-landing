@@ -1,0 +1,77 @@
+<div class="filters">
+  <select
+    id="sort-filter"
+    class="filters__select"
+    [(ngModel)]="selectedSort"
+    (ngModelChange)="onFilterChange()"
+    aria-label="Сортировка"
+  >
+    @for (option of sortOptions; track option.value) {
+      <option [value]="option.value">{{ option.label }}</option>
+    }
+  </select>
+
+  <select
+    id="genre-filter"
+    class="filters__select"
+    [(ngModel)]="selectedGenre"
+    (ngModelChange)="onFilterChange()"
+    aria-label="Выбор жанра"
+  >
+    <option value="">Все жанры</option>
+    @for (genre of availableGenres(); track genre) {
+      <option [value]="genre">{{ genre }}</option>
+    }
+  </select>
+
+  <div class="filters__year-group">
+    <input
+      id="year-from"
+      type="number"
+      class="filters__input"
+      [placeholder]="yearRange().min.toString()"
+      [min]="yearRange().min"
+      [max]="yearRange().max"
+      [(ngModel)]="yearFrom"
+      (ngModelChange)="onFilterChange()"
+      aria-label="Год от"
+    />
+    <span class="filters__separator">—</span>
+    <input
+      id="year-to"
+      type="number"
+      class="filters__input"
+      [placeholder]="yearRange().max.toString()"
+      [min]="yearRange().min"
+      [max]="yearRange().max"
+      [(ngModel)]="yearTo"
+      (ngModelChange)="onFilterChange()"
+      aria-label="Год до"
+    />
+  </div>
+
+  <button
+    type="button"
+    class="filters__reset"
+    [class.filters__reset--active]="hasActiveFilters"
+    [disabled]="!hasActiveFilters"
+    (click)="resetFilters()"
+    aria-label="Сбросить фильтры"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      class="filters__reset-icon"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+      />
+    </svg>
+    Сбросить
+  </button>
+</div>
